@@ -93,10 +93,10 @@ dependencies = [
 [[package]]
 name = "any_spawner"
 version = "0.1.1"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "futures",
- "thiserror",
+ "thiserror 2.0.3",
  "wasm-bindgen-futures",
 ]
 
@@ -144,32 +144,32 @@ checksum = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
 
 [[package]]
 name = "attribute-derive"
-version = "0.9.2"
+version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f1ee502851995027b06f99f5ffbeffa1406b38d0b318a1ebfa469332c6cbafd"
+checksum = "f1800e974930e9079c965b9ffbcb6667a40401063a26396c7b4f15edc92da690"
 dependencies = [
  "attribute-derive-macro",
  "derive-where",
  "manyhow",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
 name = "attribute-derive-macro"
-version = "0.9.2"
+version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3601467f634cfe36c4780ca9c75dea9a5b34529c1f2810676a337e7e0997f954"
+checksum = "5d908eb786ef94296bff86f90130b3b748b49401dc81fd2bb8b3dccd44cfacbd"
 dependencies = [
  "collection_literals",
  "interpolator",
  "manyhow",
- "proc-macro-utils 0.8.0",
+ "proc-macro-utils",
  "proc-macro2",
  "quote",
  "quote-use",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -300,7 +300,7 @@ dependencies = [
  "heck 0.5.0",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -317,7 +317,7 @@ checksum = "5d3ad3122b0001c7f140cf4d605ef9a9e2c24d96ab0b4fb4347b76de2425f445"
 dependencies = [
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
 ]
 
 [[package]]
@@ -397,7 +397,7 @@ dependencies = [
 [[package]]
 name = "const_str_slice_concat"
 version = "0.1.0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 
 [[package]]
 name = "convert_case"
@@ -485,7 +485,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -496,7 +496,7 @@ checksum = "d336a2a514f6ccccaa3e09b02d41d35330c07ddf03a62165fcec10bb561c7806"
 dependencies = [
  "darling_core",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -531,7 +531,7 @@ checksum = "62d671cc41a825ebabc75757b62d3d168c577f9149b2d49ece1dad1f72119d25"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -559,7 +559,7 @@ checksum = "60b1af1c220855b6ceac025d3f6ecdd2b7c4894bfe9cd9bda4fbb4bc7c0d4cf0"
 [[package]]
 name = "either_of"
 version = "0.1.0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "pin-project-lite",
 ]
@@ -719,6 +719,7 @@ dependencies = [
  "futures-core",
  "futures-task",
  "futures-util",
+ "num_cpus",
 ]
 
 [[package]]
@@ -735,7 +736,7 @@ checksum = "162ee34ebcb7c64a8abebc059ce0fee27c2262618d7b60ed8faf72fef13c3650"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -937,7 +938,7 @@ dependencies = [
  "serde",
  "serde-wasm-bindgen 0.5.0",
  "serde_urlencoded",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "web-sys",
 ]
@@ -954,7 +955,7 @@ dependencies = [
  "serde",
  "serde-wasm-bindgen 0.6.5",
  "serde_urlencoded",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "web-sys",
 ]
@@ -974,7 +975,7 @@ dependencies = [
  "pin-project",
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -995,7 +996,7 @@ dependencies = [
  "pin-project",
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -1016,7 +1017,7 @@ dependencies = [
  "pin-project",
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -1052,7 +1053,7 @@ dependencies = [
  "js-sys",
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "web-sys",
 ]
@@ -1067,7 +1068,7 @@ dependencies = [
  "js-sys",
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "web-sys",
 ]
@@ -1150,7 +1151,7 @@ dependencies = [
  "js-sys",
  "pinned",
  "serde",
- "thiserror",
+ "thiserror 1.0.66",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -1165,7 +1166,7 @@ dependencies = [
  "proc-macro-crate",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1205,7 +1206,7 @@ dependencies = [
  "pest_derive",
  "serde",
  "serde_json",
- "thiserror",
+ "thiserror 1.0.66",
 ]
 
 [[package]]
@@ -1318,8 +1319,8 @@ checksum = "9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4"
 
 [[package]]
 name = "hydration_context"
-version = "0.2.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.2.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "futures",
  "once_cell",
@@ -1457,7 +1458,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9311685eb9a34808bbb0608ad2fcab9ae216266beca5848613e95553ac914e3b"
 dependencies = [
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1532,8 +1533,8 @@ checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 
 [[package]]
 name = "leptos"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "any_spawner",
  "cfg-if",
@@ -1556,7 +1557,7 @@ dependencies = [
  "server_fn",
  "slotmap",
  "tachys",
- "thiserror",
+ "thiserror 2.0.3",
  "throw_error",
  "typed-builder",
  "typed-builder-macro",
@@ -1566,20 +1567,20 @@ dependencies = [
 
 [[package]]
 name = "leptos_config"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "config",
  "regex",
  "serde",
- "thiserror",
+ "thiserror 2.0.3",
  "typed-builder",
 ]
 
 [[package]]
 name = "leptos_dom"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "js-sys",
  "or_poisoned",
@@ -1592,8 +1593,8 @@ dependencies = [
 
 [[package]]
 name = "leptos_hot_reload"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "anyhow",
  "camino",
@@ -1603,14 +1604,14 @@ dependencies = [
  "quote",
  "rstml",
  "serde",
- "syn 2.0.86",
+ "syn 2.0.87",
  "walkdir",
 ]
 
 [[package]]
 name = "leptos_macro"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "attribute-derive",
  "cfg-if",
@@ -1624,14 +1625,14 @@ dependencies = [
  "quote",
  "rstml",
  "server_fn_macro",
- "syn 2.0.86",
+ "syn 2.0.87",
  "uuid",
 ]
 
 [[package]]
 name = "leptos_server"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "any_spawner",
  "base64",
@@ -1683,23 +1684,23 @@ checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
 
 [[package]]
 name = "manyhow"
-version = "0.10.4"
+version = "0.11.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f91ea592d76c0b6471965708ccff7e6a5d277f676b90ab31f4d3f3fc77fade64"
+checksum = "b33efb3ca6d3b07393750d4030418d594ab1139cee518f0dc88db70fec873587"
 dependencies = [
  "manyhow-macros",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
 name = "manyhow-macros"
-version = "0.10.4"
+version = "0.11.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c64621e2c08f2576e4194ea8be11daf24ac01249a4f53cd8befcbb7077120ead"
+checksum = "46fce34d199b78b6e6073abf984c9cf5fd3e9330145a93ee0738a7443e371495"
 dependencies = [
- "proc-macro-utils 0.8.0",
+ "proc-macro-utils",
  "proc-macro2",
  "quote",
 ]
@@ -1768,8 +1769,8 @@ dependencies = [
 
 [[package]]
 name = "next_tuple"
-version = "0.1.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.1.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 
 [[package]]
 name = "nom"
@@ -1833,10 +1834,10 @@ dependencies = [
 [[package]]
 name = "oco_ref"
 version = "0.2.0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "serde",
- "thiserror",
+ "thiserror 2.0.3",
 ]
 
 [[package]]
@@ -1868,7 +1869,7 @@ checksum = "a948666b637a0f465e8564c73e89d4dde00d72d4d473cc972f390fc3dcee7d9c"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1892,7 +1893,7 @@ dependencies = [
 [[package]]
 name = "or_poisoned"
 version = "0.1.0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 
 [[package]]
 name = "parking"
@@ -1948,7 +1949,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "879952a81a83930934cbf1786752d6dedc3b1f29e8f8fb2ad1d0a36f377cf442"
 dependencies = [
  "memchr",
- "thiserror",
+ "thiserror 1.0.66",
  "ucd-trie",
 ]
 
@@ -1972,7 +1973,7 @@ dependencies = [
  "pest_meta",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2003,7 +2004,7 @@ checksum = "3c0f5fad0874fc7abcd4d750e76917eaebbecaa2c20bde22e1dbeeba8beb758c"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2026,7 +2027,7 @@ checksum = "a829027bd95e54cfe13e3e258a1ae7b645960553fb82b75ff852c29688ee595b"
 dependencies = [
  "futures",
  "rustversion",
- "thiserror",
+ "thiserror 1.0.66",
 ]
 
 [[package]]
@@ -2048,7 +2049,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "64d1ec885c64d0457d564db4ec299b2dae3f9c02808b8ad9c3a089c591b18033"
 dependencies = [
  "proc-macro2",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2104,18 +2105,7 @@ dependencies = [
  "proc-macro-error-attr2",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
-]
-
-[[package]]
-name = "proc-macro-utils"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f59e109e2f795a5070e69578c4dc101068139f74616778025ae1011d4cd41a8"
-dependencies = [
- "proc-macro2",
- "quote",
- "smallvec",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2146,7 +2136,7 @@ checksum = "af066a9c399a26e020ada66a034357a868728e72cd426f3adcd35f80d88d88c8"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
  "version_check",
  "yansi",
 ]
@@ -2193,10 +2183,10 @@ version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "82ebfb7faafadc06a7ab141a6f67bcfb24cb8beb158c6fe933f2f035afa99f35"
 dependencies = [
- "proc-macro-utils 0.10.0",
+ "proc-macro-utils",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2244,8 +2234,8 @@ dependencies = [
 
 [[package]]
 name = "reactive_graph"
-version = "0.1.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.1.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "any_spawner",
  "async-lock",
@@ -2258,14 +2248,14 @@ dependencies = [
  "send_wrapper",
  "serde",
  "slotmap",
- "thiserror",
+ "thiserror 2.0.3",
  "web-sys",
 ]
 
 [[package]]
 name = "reactive_stores"
-version = "0.1.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.1.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "guardian",
  "itertools",
@@ -2278,14 +2268,14 @@ dependencies = [
 
 [[package]]
 name = "reactive_stores_macro"
-version = "0.1.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.1.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "convert_case 0.6.0",
  "proc-macro-error2",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2402,9 +2392,9 @@ dependencies = [
  "proc-macro2",
  "proc-macro2-diagnostics",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
  "syn_derive",
- "thiserror",
+ "thiserror 1.0.66",
 ]
 
 [[package]]
@@ -2594,7 +2584,7 @@ checksum = "de523f781f095e28fa605cdce0f8307e451cc0fd14e2eb4cd2e98a355b147766"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2617,7 +2607,7 @@ checksum = "cd34f36fe4c5ba9654417139a9b3a20d2e1de6012ee678ad14d240c22c78d8d6"
 dependencies = [
  "percent-encoding",
  "serde",
- "thiserror",
+ "thiserror 1.0.66",
 ]
 
 [[package]]
@@ -2668,13 +2658,13 @@ dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
 name = "server_fn"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "bytes",
  "const_format",
@@ -2690,7 +2680,7 @@ dependencies = [
  "serde_json",
  "serde_qs",
  "server_fn_macro_default",
- "thiserror",
+ "thiserror 2.0.3",
  "throw_error",
  "url",
  "wasm-bindgen",
@@ -2702,24 +2692,24 @@ dependencies = [
 
 [[package]]
 name = "server_fn_macro"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "const_format",
  "convert_case 0.6.0",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
  "xxhash-rust",
 ]
 
 [[package]]
 name = "server_fn_macro_default"
-version = "0.7.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.7.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "server_fn_macro",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3059,9 +3049,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.86"
+version = "2.0.87"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e89275301d38033efb81a6e60e3497e734dfcc62571f2854bf4b16690398824c"
+checksum = "25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3077,7 +3067,7 @@ dependencies = [
  "proc-macro-error",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3112,8 +3102,8 @@ dependencies = [
 
 [[package]]
 name = "tachys"
-version = "0.1.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.1.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "any_spawner",
  "const_str_slice_concat",
@@ -3160,7 +3150,7 @@ dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3182,7 +3172,16 @@ version = "1.0.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5d171f59dbaa811dbbb1aee1e73db92ec2b122911a48e1390dfe327a821ddede"
 dependencies = [
- "thiserror-impl",
+ "thiserror-impl 1.0.66",
+]
+
+[[package]]
+name = "thiserror"
+version = "2.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c006c85c7651b3cf2ada4584faa36773bd07bac24acfb39f3c431b36d7e667aa"
+dependencies = [
+ "thiserror-impl 2.0.3",
 ]
 
 [[package]]
@@ -3193,13 +3192,24 @@ checksum = "b08be0f17bd307950653ce45db00cd31200d82b624b36e181337d9c7d92765b5"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "2.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f077553d607adc1caf65430528a576c757a71ed73944b66ebb58ef2bbd243568"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.87",
 ]
 
 [[package]]
 name = "throw_error"
-version = "0.2.0-rc0"
-source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
+version = "0.2.0-rc1"
+source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
 dependencies = [
  "pin-project-lite",
 ]
@@ -3276,7 +3286,7 @@ checksum = "693d596312e88961bc67d7f1f97af8a70227d9f90c31bba5806eec004978d752"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3394,7 +3404,7 @@ checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3414,22 +3424,22 @@ checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 
 [[package]]
 name = "typed-builder"
-version = "0.19.1"
+version = "0.20.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a06fbd5b8de54c5f7c91f6fe4cebb949be2125d7758e630bb58b1d831dbce600"
+checksum = "7e14ed59dc8b7b26cacb2a92bad2e8b1f098806063898ab42a3bd121d7d45e75"
 dependencies = [
  "typed-builder-macro",
 ]
 
 [[package]]
 name = "typed-builder-macro"
-version = "0.19.1"
+version = "0.20.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f9534daa9fd3ed0bd911d462a37f172228077e7abf18c18a5f67199d959205f8"
+checksum = "560b82d656506509d43abe30e0ba64c56b1953ab3d4fe7ba5902747a7a3cedd5"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3580,15 +3590,15 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
  "wasm-bindgen-shared",
 ]
 
 [[package]]
 name = "wasm-bindgen-futures"
-version = "0.4.43"
+version = "0.4.45"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "61e9300f63a621e96ed275155c108eb6f843b6a26d053f122ab69724559dc8ed"
+checksum = "cc7ec4f8827a71586374db3e87abdb5a2bb3a15afed140221307c3ec06b1f63b"
 dependencies = [
  "cfg-if",
  "js-sys",
@@ -3614,7 +3624,7 @@ checksum = "26c6ab57572f7a24a4985830b120de1594465e5d500f24afe89e16b4e833ef68"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
  "wasm-bindgen-backend",
  "wasm-bindgen-shared",
 ]
@@ -3627,9 +3637,9 @@ checksum = "65fc09f10666a9f147042251e0dda9c18f166ff7de300607007e96bdebc1068d"
 
 [[package]]
 name = "wasm-streams"
-version = "0.4.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4e072d4e72f700fb3443d8fe94a39315df013eef1104903cdb0a2abd322bbecd"
+checksum = "15053d8d85c7eccdbefef60f06769760a563c7f0a9d6902a13d35c7800b0ad65"
 dependencies = [
  "futures-util",
  "js-sys",
@@ -3823,7 +3833,7 @@ dependencies = [
  "rustversion",
  "serde",
  "slab",
- "thiserror",
+ "thiserror 1.0.66",
  "tokio",
  "tracing",
  "wasm-bindgen",
@@ -3853,7 +3863,7 @@ dependencies = [
  "proc-macro-error",
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3881,7 +3891,7 @@ source = "git+https://github.com/RustForWeb/yew.git?branch=feature%2Fuse-compose
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.86",
+ "syn 2.0.87",
 ]
 
 [[package]]
