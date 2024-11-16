@@ -1,4 +1,10 @@
-use leptos::{ev::MouseEvent, html, prelude::*};
+use leptos::{
+    attr::any_attribute::AnyAttribute,
+    ev::MouseEvent,
+    html::{self, ElementType, HtmlElement},
+    prelude::*,
+};
+use leptos_node_ref::AnyNodeRef;
 use tailwind_fuse::*;
 
 #[derive(TwClass)]
@@ -43,32 +49,42 @@ pub enum ButtonSize {
 
 #[derive(Clone)]
 pub struct ButtonChildProps {
-    pub node_ref: NodeRef<html::Button>,
+    pub node_ref: AnyNodeRef,
     pub id: MaybeProp<String>,
-    pub class: Memo<String>,
+    pub class: Signal<String>,
     pub style: MaybeProp<String>,
     pub disabled: bool,
     pub onclick: Option<Callback<MouseEvent>>,
 }
 
 impl ButtonChildProps {
-    pub fn render(self, children: Children) -> AnyView {
+    pub fn render(self, children: Option<Children>) -> AnyView {
         view! {
             <button
                 node_ref={self.node_ref}
-                // TODO: figure out how to pass the Signal/Memo directly
-                // id=move || self.id.get()
-                // id=self.id
+                id=move || self.id.get()
                 class=self.class
                 style=move || self.style.get()
                 disabled=self.disabled
-                // TODO
-                // on:click={self.onclick.unwrap()}
+                on:click={move |event| if let Some(onclick) = self.onclick {
+                    onclick.run(event)
+                }}
             >
-                {children()}
+                {children.map(|children| children())}
             </button>
         }
         .into_any()
+    }
+}
+
+#[derive(Default)]
+pub struct Dynamic {
+    // attributes: Vec<AnyAttribute>,
+}
+
+impl Dynamic {
+    pub fn render<E, At, Ch, F: Fn() -> HtmlElement<E, At, Ch>>(self, tag: F) -> AnyView {
+        View::new(tag()).into_any()
     }
 }
 
@@ -78,12 +94,14 @@ pub fn Button(
     #[prop(into, optional)] size: Signal<ButtonSize>,
     #[prop(into, optional)] disabled: bool,
     #[prop(into, optional)] on_click: Option<Callback<MouseEvent>>,
-    #[prop(into, optional)] node_ref: NodeRef<html::Button>,
+    #[prop(into, optional)] node_ref: AnyNodeRef,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] style: MaybeProp<String>,
-    #[prop(into, optional)] as_child: Option<Callback<ButtonChildProps, AnyView>>,
-    children: Children,
+    #[prop(into, optional)] dynamic: Dynamic,
+    // #[prop(into, optional)] as_child: Option<Callback<ButtonChildProps, AnyView>>,
+    #[prop(into, optional)] as_child: Option<Callback<Dynamic, AnyView>>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     let class = Memo::new(move |_| {
         ButtonClass {
@@ -93,18 +111,79 @@ pub fn Button(
         .with_class(class.get().unwrap_or_default())
     });
 
-    let child_props = ButtonChildProps {
-        node_ref,
-        id,
-        class,
-        style,
-        disabled,
-        onclick: on_click,
-    };
+    // let child_props = ButtonChildProps {
+    //     node_ref,
+    //     id,
+    //     class: class.into(),
+    //     style,
+    //     disabled,
+    //     onclick: on_click,
+    // };
+
+    // if let Some(as_child) = as_child.as_ref() {
+    //     as_child.run(child_props)
+    // } else {
+    //     child_props.render(children)
+    // }
 
     if let Some(as_child) = as_child.as_ref() {
-        as_child.run(child_props)
+        as_child.run(dynamic)
     } else {
-        child_props.render(children)
+        dynamic.render(leptos::tachys::html::element::button)
+    }
+}
+
+#[derive(Clone)]
+pub struct TooltipChildProps {
+    pub node_ref: AnyNodeRef,
+    pub id: MaybeProp<String>,
+    pub class: MaybeProp<String>,
+    pub style: MaybeProp<String>,
+}
+
+#[component]
+fn Tooltip(
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: MaybeProp<String>,
+    #[prop(into, optional)] dynamic: Dynamic,
+    // #[prop(into)] as_child: Callback<TooltipChildProps, AnyView>,
+    #[prop(into)] as_child: Callback<Dynamic, AnyView>,
+) -> impl IntoView {
+    // let child_props = TooltipChildProps {
+    //     node_ref,
+    //     id,
+    //     class,
+    //     style,
+    // };
+
+    // as_child.run(child_props)
+
+    as_child.run(dynamic)
+}
+
+#[component]
+fn App() -> impl IntoView {
+    let test = view! {
+        <button />
+    }
+    .into_any();
+
+    view! {
+        // <Tooltip
+        //     as_child=Callback::new(|TooltipChildProps { node_ref, .. }| view! {
+        //         <Button node_ref={node_ref}>Test</Button>
+        //     }.into_any())
+        // />
+        <Tooltip
+            as_child=Callback::new(|dynamic| view! {
+                <Button dynamic={dynamic}>Test</Button>
+            }.into_any())
+        />
+
+        // <Button as_child=Callback::new(|ButtonChildProps { node_ref, ..}| view! {
+        //     <a node_ref={node_ref} href="#">Test</a>
+        // }.into_any()) />
     }
 }

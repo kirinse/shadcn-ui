@@ -1566,6 +1566,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-node-ref"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08c63376a1de3c1d37b2e7629792ce7fe26afa89a2b78df899f3c00ef7464cc8"
+dependencies = [
+ "leptos",
+ "send_wrapper",
+]
+
+[[package]]
 name = "leptos_config"
 version = "0.7.0-rc1"
 source = "git+https://github.com/leptos-rs/leptos.git#c2b239dba24de29ed948d94fe15a08d6143f689f"
@@ -2774,6 +2784,7 @@ name = "shadcn-ui-leptos-button"
 version = "0.0.1"
 dependencies = [
  "leptos",
+ "leptos-node-ref",
  "tailwind_fuse",
 ]
 
